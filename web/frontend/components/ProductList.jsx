@@ -28,8 +28,8 @@ export function ProductList() {
       },
     },
   });
-	console.log(data,'asdf;lkjhg');
-
+  
+	// console.log(data,'asdf;lkjhg');
 	// const renderProducts = (data) => {
 	// 	return data.map((val) => <tr>
 	// 	<td>{val.Product.id} </td>

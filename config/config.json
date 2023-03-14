@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "udaan",
-    "password": "Udaan!@09",
-    "database": "pending_order",
-    "host": "127.0.0.1",
+    "username": "happifypendingorder",
+    "password": "PendingOrder@20232024",
+    "database": "happifypendingorder",
+    "host": "3.111.87.251",
     "dialect": "mysql"
   },
   "test": {

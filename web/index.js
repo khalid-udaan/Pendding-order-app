@@ -78,7 +78,7 @@ app.get('/api/product/list', async (_req, res) => {
 app.get("/api/orders/list", async (_req, res) => {
   const orders = await shopify.api.rest.Order.all({
     session: res.locals.shopify.session,
-    status: "",
+    status: "unfulfilled",
   })
 
   orders.forEach(async (element) => {

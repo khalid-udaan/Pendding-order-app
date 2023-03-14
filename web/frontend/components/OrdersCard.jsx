@@ -5,7 +5,7 @@ import {
   TextContainer,
   DisplayText,
   TextStyle,
-  IndexTable
+  // IndexTable
 } from "@shopify/polaris";
 import { Toast } from "@shopify/app-bridge-react";
 import { useAppQuery, useAuthenticatedFetch } from "../hooks";
@@ -16,14 +16,13 @@ export function OrdersCard() {
   const [toastProps, setToastProps] = useState(emptyToastProps);
   const fetch = useAuthenticatedFetch();
   const [orderCount, setOrderCount] = useState(0);
-
   const {
     data,
     refetch: refetchOrderCount,
     isLoading: isLoadingCount,
     isRefetching: isRefetchingCount,
   } = useAppQuery({
-    url: "/api/product",
+    url: "/api/orders/count",
     reactQueryOptions: {
       onSuccess: () => {
         setIsLoading(false);
@@ -38,7 +37,9 @@ export function OrdersCard() {
 
   const handlePopulate = async () => {
     setIsLoading(true);
-    const response = await fetch("/api/products/create");
+    const response = await fetch("/api/orders/count");
+      const data=response.json();
+      console.log(data, "My API DATA");
 
     if (response.ok) {
       await refetchProductCount();
@@ -71,6 +72,10 @@ export function OrdersCard() {
   //     </IndexTable.Row>
   //   )
   // );
+
+  // useEffect(()=>{
+  //   // handlePopulate();
+  // },)
 
   return (
     <>
